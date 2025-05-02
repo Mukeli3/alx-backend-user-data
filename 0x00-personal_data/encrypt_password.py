@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-import bcrypt
 """
 module defines hash_password function
 """
+import bcrypt
 
 
 def hash_password(password: str) -> bytes:
