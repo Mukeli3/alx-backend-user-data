@@ -9,7 +9,8 @@ import mysql.connector
 from typing import List
 
 
-def filter_datum(fields, redaction, message, separator):
+def filter_datum(fields: List[str], redaction: str,
+                 message: str, separator: str) -> str:
     """
     Function returns masked log msg, uses a regex to replace
     occurrences of certain field values and uses re.sub to
