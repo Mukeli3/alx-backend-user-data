@@ -49,6 +49,9 @@ def forbidden(error) -> str:
 
 @app.before_request
 def before_request_handler():
+    """
+    filter requests before processing
+    """
     if auth is None:
         return
     excluded_paths = [
@@ -65,7 +68,6 @@ def before_request_handler():
 
 
 if __name__ == "__main__":
-    export AUTH_TYPE=basic_auth
     host = getenv("API_HOST", "0.0.0.0")
     port = getenv("API_PORT", "5000")
     app.run(host=host, port=port)
