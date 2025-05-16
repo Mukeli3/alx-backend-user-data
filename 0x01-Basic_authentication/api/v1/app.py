@@ -26,6 +26,9 @@ EXCLUDED_PATHS = ['/api/v1/status/', '/api/v1/unauthorized/',
 
 @app.before_request
 def before_request_handler():
+    """
+    request validation
+    """
     if auth is None:
         return
 
